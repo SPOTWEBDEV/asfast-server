@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.use("/api/user", userRoutes);
 
 // Health check
-app.get("/asfast.com/api", (req, res) => {
+app.get("/api/v1", (req, res) => {
   res.json({ status: "API running 🚀" });
 });
 
