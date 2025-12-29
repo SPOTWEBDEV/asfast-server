@@ -2,8 +2,14 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
-// const authRoutes = require("./routes/auth.routes");
-// const userRoutes = require("./routes/user.routes");
+const authRoutes = require("./routes/auth.routes");
+const airtimeRoutes = require("./routes/airtime.routes");
+
+
+
+
+
+
 
 const app = express();
 
@@ -13,8 +19,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
-// app.use("/api/auth", authRoutes);
-// app.use("/api/user", userRoutes);
+app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/airtime", airtimeRoutes);
 
 // Health check
 app.get("/api/v1", (req, res) => {
